@@ -2,6 +2,15 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{float}
+\usepackage {tikz}
+\usepackage {pgfplots}
+\usepackage {pgfplotstable}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{compat = 1.14, cycle list/Set1-8} 
+\usetikzlibrary{pgfplots.statistics, pgfplots.colorbrewer}
+\usetikzlibrary{arrows,positioning,shapes,decorations.text,mindmap,backgrounds}
+\usepackage{subcaption}
 \title{Identity and Search on Wikipedia}
 
 \author[1,+]{Dániel Ficzere}
@@ -44,6 +53,34 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
 
 \subsection*{Scaffold visualization}
 \subsection*{Unions and intersections}
+
+\begin{figure}[H]
+  \centering
+ \begin{tikzpicture}
+     \begin{axis}[
+       height=5cm,width=4.5cm,
+       boxplot/draw direction = y,
+       x axis line style = {opacity=0},
+       axis x line* = bottom,
+       axis y line = left,
+       enlarge y limits,
+       ymin=0, ymax=0.07,
+       cycle list={index of colormap=1 of Set1-8},
+       ymajorgrids,
+       xtick = {1,2},
+       xticklabel style = {align=center, font=\small},
+       xticklabels = { All user pairs},
+       xtick style = {draw=none}, % Hide tick line
+       ylabel = {Scaffold overlap in \%},
+       % ytick = {20, 40}
+       ]
+       \addplot+[boxplot, fill, draw=black] table [y=jaccard, col sep=comma] {data/jaccards.txt};
+     \end{axis}
+   \end{tikzpicture}
+  \caption{The statistics of the Jaccard index for all pairs of user scaffolds.}
+  \label{fig:jaccard}
+\end{figure}
+
 \subsection*{Search dimensions}
 \subsection*{Markovian analysis}
 
