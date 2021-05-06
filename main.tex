@@ -52,6 +52,14 @@ The Introduction section, of referenced text\cite{Figueredo:2009dg} expands on t
 Up to three levels of \textbf{subheading} are permitted. Subheadings should not be numbered.
 
 \subsection*{Scaffold visualization}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figs/scaffold_vis.png}
+\caption{Visualization of a user scaffold.}
+\label{fig:scaffvis}
+\end{figure}
+
 \subsection*{Scaffold statistics}
 
 \begin{figure}[H]
@@ -67,12 +75,11 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
         axis y line = left,
         enlarge y limits,
         ymin=1, ymax=60,
-        xmax=120,
+        xmax=70,
         cycle list={index of colormap=1 of Set1-8},
         ymajorgrids,
         xlabel = {k},
         ylabel = {Degree CDF(k)},
-        % ytick = {20, 40}
         ]
         \addplot+ table [x=deg, y=num, col sep=comma] {data/scaffold_degdist.txt};
         \end{axis}
@@ -92,7 +99,6 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
         ymajorgrids,
         xlabel = {w},
         ylabel = {Edge weight CDF(w)},
-        % ytick = {20, 40}
         ]
         \addplot+ table [x=weight, y=num, col sep=comma] {data/scaffold_weightdist.txt};
         \end{axis}
