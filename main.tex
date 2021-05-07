@@ -208,42 +208,43 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
 \end{figure}
 
 
-%\pgfplotstableread[col sep=comma]{data/Tag_ranking.csv}{\ranktable}
-%\pgfplotstablegetcolsof{\loadedtable}
-%\pgfmathtruncatemacro{\NoOfCols}{\pgfplotsretval-1}
-%\begin{figure}[H]
-%  \centering
-%    \begin{tikzpicture}
-%        \begin{axis}[
-%        %height=5cm,width=8cm,
-%        boxplot/draw direction = y,
-%        x axis line style = {opacity=0},
-%        axis x line* = bottom,
-%        axis y line = left,
-%        enlarge y limits,
-%        ymin=0, ymax=150,
-%        xtick=data,
-%        xticklabels from table={\ranktable}{COUNT},
-%        bar width=0.85/\NoOfCols,
-%        cycle list={index of colormap=1 of Set1-8},
-%        ymajorgrids,
-%        xlabel = {k},
-%        ylabel = {Degree CDF(k)},
-%        ]
-%        \foreach \i in {1,...,\NoOfCols} {
-%            \addplot table [
-%                x expr=\coordindex,
-%                y index=\i,
-%                col sep=comma,
-%            ] {\ranktable};
-%                \pgfplotstablegetcolumnnamebyindex{\i}\of{\ranktable}\to{\colname}
-%                \addlegendentryexpanded{\colname};
-%        }
-%        \end{axis}
-%    \end{tikzpicture}
-%  \caption{Tag rankings.}
-%  \label{fig:tagranks}
-%\end{figure}
+\pgfplotstableread[col sep=comma]{data/Tag_ranking.csv}{\ranktable}
+\pgfplotstablegetcolsof{\ranktable}
+\pgfmathtruncatemacro{\NoOfCols}{\pgfplotsretval-1}
+\begin{figure}[H]
+ \centering
+   \begin{tikzpicture}
+     \begin{axis}[
+       width=1.2*\axisdefaultwidth,
+       height=\axisdefaultheight,
+       axis line style = {opacity=0},
+       axis x line* = bottom,
+       axis y line = left,
+       enlarge y limits,
+       ymin=0, ymax=150,
+       xtick=data,
+       ybar=0pt,
+       xticklabels from table={\ranktable}{Rank},
+       bar width=0.85/\NoOfCols,
+       ymajorgrids,
+       xlabel = {Rank},
+       ylabel = {Number of users},
+       legend style={at={(0.5,0.7)},anchor=west}
+       ]
+       \foreach \i in {1,...,\NoOfCols} {
+           \addplot table [
+               x expr=\coordindex,
+               y index=\i,
+               col sep=comma,
+           ] {\ranktable};
+               \pgfplotstablegetcolumnnamebyindex{\i}\of{\ranktable}\to{\colname}
+               \addlegendentryexpanded{\colname};
+       }
+       \end{axis}
+   \end{tikzpicture}
+ \caption{Tag rankings.}
+ \label{fig:tagranks}
+\end{figure}
 
 \subsection*{Markovian analysis}
 
@@ -323,3 +324,7 @@ The corresponding author is responsible for submitting a \href{http://www.nature
 %Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure %\ref{fig:stream} and Table \ref{tab:example}.
 
 \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
