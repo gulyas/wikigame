@@ -107,96 +107,95 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
   \label{fig:dists}
 \end{figure}
 
-
-\begin{figure}[H]
-  \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-        height=5cm,width=4.5cm,
-        boxplot/draw direction = y,
-        x axis line style = {opacity=0},
-        axis x line* = bottom,
-        axis y line = left,
-        enlarge y limits,
-        ymin=0, ymax=500,
-        cycle list={index of colormap=1 of Set1-8},
-        ymajorgrids,
-        xtick = {1,2},
-        xticklabel style = {align=center, font=\small},
-        xticklabels = {},
-        xtick style = {draw=none}, % Hide tick line
-        ylabel = {Number of nodes},
-        % ytick = {20, 40}
-        ]
-        \addplot+[boxplot, fill, draw=black] table [y=nodes, col sep=comma] {data/scaffolds_nodes.txt};
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture} 
-        \begin{axis}[
-        height=5cm,width=4.5cm,
-        boxplot/draw direction = y,
-        x axis line style = {opacity=0},
-        axis x line* = bottom,
-        axis y line = left,
-        enlarge y limits,
-        ymin=1.9, ymax=2.7,
-        cycle list={index of colormap=1 of Set1-8},
-        ymajorgrids,
-        xtick = {1,2},
-        xticklabel style = {align=center, font=\small},
-        xticklabels = {},
-        xtick style = {draw=none}, % Hide tick line
-        ylabel = {Average degree},
-        % ytick = {20, 40}
-        ]
-        \addplot+[boxplot, fill, draw=black] table [y=avgdeg, col sep=comma] {data/scaffolds_avgdeg.txt};
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture} 
-        \begin{axis}[
-        height=5cm,width=4.5cm,
-        boxplot/draw direction = y,
-        x axis line style = {opacity=0},
-        axis x line* = bottom,
-        axis y line = left,
-        enlarge y limits,
-        ymin=2.7, ymax=5.5,
-        cycle list={index of colormap=1 of Set1-8},
-        ymajorgrids,
-        xtick = {1,2},
-        xticklabel style = {align=center, font=\small},
-        xticklabels = {},
-        xtick style = {draw=none}, % Hide tick line
-        ylabel = {Average distance},
-        % ytick = {20, 40}
-        ]
-        \addplot+[boxplot, fill, draw=black] table [y=avgdist, col sep=comma] {data/scaffolds_avgdist.txt};
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture}
-        \begin{axis}[
-        height=5cm,width=4.5cm,
-        boxplot/draw direction = y,
-        x axis line style = {opacity=0},
-        axis x line* = bottom,
-        axis y line = left,
-        enlarge y limits,
-        ymin=0, ymax=0.07,
-        cycle list={index of colormap=1 of Set1-8},
-        ymajorgrids,
-        xtick = {1,2},
-        xticklabel style = {align=center, font=\small},
-        xticklabels = { All scaffold pairs},
-        xtick style = {draw=none}, % Hide tick line
-        ylabel = {Jaccard index},
-        % ytick = {20, 40}
-        ]
-        \addplot+[boxplot, fill, draw=black] table [y=jaccard, col sep=comma] {data/jaccards.txt};
-        \end{axis}
-   \end{tikzpicture}
-  \caption{Statistics of user scaffolds.}
-  \label{fig:bstats}
-\end{figure}
+% \begin{figure}[H]
+%   \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%         height=5cm,width=4.5cm,
+%         boxplot/draw direction = y,
+%         x axis line style = {opacity=0},
+%         axis x line* = bottom,
+%         axis y line = left,
+%         enlarge y limits,
+%         ymin=0, ymax=500,
+%         cycle list={index of colormap=1 of Set1-8},
+%         ymajorgrids,
+%         xtick = {1,2},
+%         xticklabel style = {align=center, font=\small},
+%         xticklabels = {},
+%         xtick style = {draw=none}, % Hide tick line
+%         ylabel = {Number of nodes},
+%         % ytick = {20, 40}
+%         ]
+%         \addplot+[boxplot, fill, draw=black] table [y=nodes, col sep=comma] {data/scaffolds_nodes.txt};
+%         \end{axis}
+%     \end{tikzpicture}
+%     \begin{tikzpicture} 
+%         \begin{axis}[
+%         height=5cm,width=4.5cm,
+%         boxplot/draw direction = y,
+%         x axis line style = {opacity=0},
+%         axis x line* = bottom,
+%         axis y line = left,
+%         enlarge y limits,
+%         ymin=1.9, ymax=2.7,
+%         cycle list={index of colormap=1 of Set1-8},
+%         ymajorgrids,
+%         xtick = {1,2},
+%         xticklabel style = {align=center, font=\small},
+%         xticklabels = {},
+%         xtick style = {draw=none}, % Hide tick line
+%         ylabel = {Average degree},
+%         % ytick = {20, 40}
+%         ]
+%         \addplot+[boxplot, fill, draw=black] table [y=avgdeg, col sep=comma] {data/scaffolds_avgdeg.txt};
+%         \end{axis}
+%     \end{tikzpicture}
+%     \begin{tikzpicture} 
+%         \begin{axis}[
+%         height=5cm,width=4.5cm,
+%         boxplot/draw direction = y,
+%         x axis line style = {opacity=0},
+%         axis x line* = bottom,
+%         axis y line = left,
+%         enlarge y limits,
+%         ymin=2.7, ymax=5.5,
+%         cycle list={index of colormap=1 of Set1-8},
+%         ymajorgrids,
+%         xtick = {1,2},
+%         xticklabel style = {align=center, font=\small},
+%         xticklabels = {},
+%         xtick style = {draw=none}, % Hide tick line
+%         ylabel = {Average distance},
+%         % ytick = {20, 40}
+%         ]
+%         \addplot+[boxplot, fill, draw=black] table [y=avgdist, col sep=comma] {data/scaffolds_avgdist.txt};
+%         \end{axis}
+%     \end{tikzpicture}
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%         height=5cm,width=4.5cm,
+%         boxplot/draw direction = y,
+%         x axis line style = {opacity=0},
+%         axis x line* = bottom,
+%         axis y line = left,
+%         enlarge y limits,
+%         ymin=0, ymax=0.07,
+%         cycle list={index of colormap=1 of Set1-8},
+%         ymajorgrids,
+%         xtick = {1,2},
+%         xticklabel style = {align=center, font=\small},
+%         xticklabels = { All scaffold pairs},
+%         xtick style = {draw=none}, % Hide tick line
+%         ylabel = {Jaccard index},
+%         % ytick = {20, 40}
+%         ]
+%         \addplot+[boxplot, fill, draw=black] table [y=jaccard, col sep=comma] {data/jaccards.txt};
+%         \end{axis}
+%   \end{tikzpicture}
+%   \caption{Statistics of user scaffolds.}
+%   \label{fig:bstats}
+% \end{figure}
 
 \subsection*{Search dimensions}
 \begin{figure}[H]
@@ -207,6 +206,7 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
 \caption{Tagged scaffolds.}
 \label{fig:scaftag}
 \end{figure}
+
 
 %\pgfplotstableread[col sep=comma]{Tag_ranking.csv}{\ranktable}
 %\pgfplotstablegetcolsof{\loadedtable}
@@ -306,20 +306,20 @@ To include, in this order: \textbf{Accession codes} (where applicable); \textbf{
 
 The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-Condition & n & p \\
-\hline
-A & 5 & 0.1 \\
-\hline
-B & 10 & 0.01 \\
-\hline
-\end{tabular}
-\caption{\label{tab:example}Legend (350 words max). Example legend text.}
-\end{table}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{|l|l|l|}
+%\hline
+%Condition & n & p \\
+%\hline
+%A & 5 & 0.1 \\
+%\hline
+%B & 10 & 0.01 \\
+%\hline
+%\end{tabular}
+%\caption{\label{tab:example}Legend (350 words max). Example legend text.}
+%\end{table}
 
-Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
+%Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure %\ref{fig:stream} and Table \ref{tab:example}.
 
 \end{document}
