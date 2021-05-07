@@ -199,6 +199,52 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
 \end{figure}
 
 \subsection*{Search dimensions}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.32\linewidth]{figs/mysql_Mursuka_reduced_tags.png}
+\includegraphics[width=0.32\linewidth]{figs/mysql_Mursuka_reduced_tagsub_geo.png}
+\includegraphics[width=0.32\linewidth]{figs/mysql_Mursuka_reduced_tagsub_cult.png}
+\caption{Tagged scaffolds.}
+\label{fig:scaftag}
+\end{figure}
+
+%\pgfplotstableread[col sep=comma]{Tag_ranking.csv}{\ranktable}
+%\pgfplotstablegetcolsof{\loadedtable}
+%\pgfmathtruncatemacro{\NoOfCols}{\pgfplotsretval-1}
+%\begin{figure}[H]
+%  \centering
+%    \begin{tikzpicture}
+%        \begin{axis}[
+%        %height=5cm,width=8cm,
+%        boxplot/draw direction = y,
+%        x axis line style = {opacity=0},
+%        axis x line* = bottom,
+%        axis y line = left,
+%        enlarge y limits,
+%        ymin=0, ymax=150,
+%        xtick=data,
+%        xticklabels from table={\ranktable}{COUNT},
+%        bar width=0.85/\NoOfCols,
+%        cycle list={index of colormap=1 of Set1-8},
+%        ymajorgrids,
+%        xlabel = {k},
+%        ylabel = {Degree CDF(k)},
+%        ]
+%        \foreach \i in {1,...,\NoOfCols} {
+%            \addplot table [
+%                x expr=\coordindex,
+%                y index=\i,
+%                col sep=comma,
+%            ] {\ranktable};
+%                \pgfplotstablegetcolumnnamebyindex{\i}\of{\ranktable}\to{\colname}
+%                \addlegendentryexpanded{\colname};
+%        }
+%        \end{axis}
+%    \end{tikzpicture}
+%  \caption{Tag rankings.}
+%  \label{fig:tagranks}
+%\end{figure}
+
 \subsection*{Markovian analysis}
 
 \begin{figure}[H]
@@ -208,8 +254,15 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
 \label{fig:kopt}
 \end{figure}
 
+\subsection*{User statistics}
 
-
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{figs/avg_stretch.png}
+\includegraphics[width=0.45\linewidth]{figs/avg_game_length.png}
+\caption{Average user statistics over 1000 games}
+\label{fig:user_avg_stats}
+\end{figure}
 
 \subsection*{Subsection}
 
